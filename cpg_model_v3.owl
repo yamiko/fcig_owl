@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.yamiko.org/ontologies/cpg_model"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.yamiko.org/ontologies/cpg_model">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VariableValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recommendation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVariableValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionVariable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActionVerb"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Guideline"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatesValueTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatesToVariableThrough"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecommendation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVerbComplement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Condition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecisionVariable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActionVerbComplement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActionVerb"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionWithUnit"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Action"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasActionVerb"/>
+                    <Class IRI="#ActionVerb"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasActionVerb"/>
+                    <Class IRI="#ActionVerb"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasVerbComplement"/>
+                    <Class IRI="#ActionVerbComplement"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasVerbComplement"/>
+                    <Class IRI="#ActionVerbComplement"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Condition"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasDecisionVariable"/>
+                    <Class IRI="#DecisionVariable"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasDecisionVariable"/>
+                    <Class IRI="#DecisionVariable"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasVariableValue"/>
+                    <Class IRI="#VariableValue"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasVariableValue"/>
+                    <Class IRI="#VariableValue"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ConditionWithUnit"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasDecisionVariable"/>
+                    <Class IRI="#DecisionVariable"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasDecisionVariable"/>
+                    <Class IRI="#DecisionVariable"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasUnit"/>
+                    <Class IRI="#Unit"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasUnit"/>
+                    <Class IRI="#Unit"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasVariableValue"/>
+                    <Class IRI="#VariableValue"/>
+                </ObjectAllValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasVariableValue"/>
+                    <Class IRI="#VariableValue"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Guideline"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasRecommendation"/>
+                <Class IRI="#Recommendation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasRecommendation"/>
+                <Class IRI="#Recommendation"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Recommendation"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasAction"/>
+                    <Class IRI="#Action"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasAction"/>
+                    <Class IRI="#Action"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasCondition"/>
+                    <Class IRI="#Condition"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="#hasCondition"/>
+                    <Class IRI="#Condition"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Relator"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#relatesValueTo"/>
+                <Class IRI="#DecisionVariable"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#relatesValueTo"/>
+                <Class IRI="#DecisionVariable"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VariableValue"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#relatesToVariableThrough"/>
+                <Class IRI="#Relator"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#relatesToVariableThrough"/>
+                <Class IRI="#Relator"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <DisjointClasses>
+        <Class IRI="#Action"/>
+        <Class IRI="#ActionVerb"/>
+        <Class IRI="#ActionVerbComplement"/>
+        <Class IRI="#Condition"/>
+        <Class IRI="#DecisionVariable"/>
+        <Class IRI="#Guideline"/>
+        <Class IRI="#Recommendation"/>
+        <Class IRI="#Relator"/>
+        <Class IRI="#Unit"/>
+        <Class IRI="#VariableValue"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAction"/>
+        <Class IRI="#Recommendation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActionVerb"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCondition"/>
+        <ObjectUnionOf>
+            <Class IRI="#Condition"/>
+            <Class IRI="#Recommendation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecisionVariable"/>
+        <Class IRI="#Condition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRecommendation"/>
+        <Class IRI="#Guideline"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="#ConditionWithUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVariableValue"/>
+        <Class IRI="#Condition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVerbComplement"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatesToVariableThrough"/>
+        <Class IRI="#VariableValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatesValueTo"/>
+        <Class IRI="#Relator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAction"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActionVerb"/>
+        <Class IRI="#ActionVerb"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#Condition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecisionVariable"/>
+        <Class IRI="#DecisionVariable"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRecommendation"/>
+        <Class IRI="#Recommendation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="#Unit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVariableValue"/>
+        <Class IRI="#VariableValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVerbComplement"/>
+        <Class IRI="#ActionVerbComplement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatesToVariableThrough"/>
+        <Class IRI="#Relator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatesValueTo"/>
+        <Class IRI="#DecisionVariable"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class is adapted from the element Action of the Guideline Elements Model (GEM) and the equivalents of the action representation primitive in existing guideline modelling platforms such as Guideline Interchange Format (GLIF), Arden Syntax and Shareable and Active Guideline Environments (SAGE). The Action Element defines an appropriate activity to be carried out given the specific circumstances.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActionVerb</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Adapted from the Element ActionVerb of the Guideline Elements Model (GEM). The Action Element defines the word or phrase in a recommendation that expresses action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActionVerbComplement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Adapted from the Element ActionVerb of the Guideline Elements Model (GEM). The Action Element defines the word or phrase in a recommendation that expresses action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Condition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class is adapted from the equivalents of the condition representation primitive in existing guideline modelling platforms such as Guideline Interchange Format (GLIF), Arden Syntax and Shareable and Active Guideline Environments (SAGE). It defines the specific circumstances that a recommendation is applicable.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionWithUnit</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class defines a Condition that is qualified with a Unit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisionVariable</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class is adapted from the element DecisionVariable of the Guideline Elements Model (GEM) and the equivalents of the decision representation primitive in existing guideline modelling platforms such as Guideline Interchange Format (GLIF), Arden Syntax and Shareable and Active Guideline Environments (SAGE). The Decision Variable element defines a condition that must be tested to indicate the appropriateness of a conditional recommendation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Recommendation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class is adapted from the element Recommendation of the Guideline Elements Model (GEM). The Recommendation Element defines the statement of appropriate practice and the conditions under which it is to be undertaken.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Relator</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Adopted from the class gfo:Relator of the foundational ontology General Formal Ontology (GFO). It mediates how a VariableValue instance relates to a particular decisionVariable instance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Unit</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This is modelled from the class Unit of the Systematized Nomenclature of Medicine - Clinical Terms (SNOMED-CT) that defines Unit as a Qualifier Value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VariableValue</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">This class is adapted from the element Value of the Guideline Elements Model (GEM) and the equivalents of the Decision representation primitive in existing guideline modelling platforms such as Guideline Interchange Format (GLIF), Arden Syntax and Shareable and Active Guideline Environments (SAGE). The Value element defines a specified state of a decision variable.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
